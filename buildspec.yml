@@ -6,6 +6,10 @@ phases:
       - pip install pipenv --user
       - pipenv install awscli aws-sam-cli
       - pipenv run sam package --template-file template.yml --s3-bucket dpromise-hello-lambda --output-template-file packaged-template.yml
+    install:
+      runtime-versions:
+        nodejs: 10
+    
 artifacts:
   files:
     - packaged-template.yml
